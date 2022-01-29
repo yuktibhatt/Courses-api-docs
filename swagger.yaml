@@ -22,10 +22,12 @@ servers:
         enum:
           - v1
           - v2
+        default: v1
       protocol:
         enum:
           - http
           - https
+        default: http
 
 components: 
   securitySchemes: 
@@ -37,9 +39,24 @@ components:
       type: http
       scheme: bearer
 
-
-
-
+paths:
+  /lco: 
+    get:
+      tags:
+      - String
+      summary: returns a greet message from lco
+      responses:
+        200:
+          description: All good and success
+          content: 
+            application/json:
+              scheme:
+                type: string
+                example: "mystring"
+        400:
+          description: Bad Request
+        500:
+          description: Internal Server error
 
   
 
