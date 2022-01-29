@@ -32,8 +32,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/v1/lco", (req, res) => {
-    res.send("Hello from lco docs");
+    res.send("hello from lco docs");
 });
+
+app.get("/api/v1/lcoobject", (req, res) => {
+    res.send({ id: "55", name: "Learn Backend", price: 999});
+});
+
 
 
 
