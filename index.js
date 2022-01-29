@@ -56,6 +56,13 @@ app.post("/api/v1/addCourse", (req,res) => {
     res.send(true);
 });
 
+app.get("/api/v1/coursequery", (req,res) => {
+    let location = req.query.location
+    let device = req.query.device
+    res.send({ location, device });
+});
+
+
 
 
 
