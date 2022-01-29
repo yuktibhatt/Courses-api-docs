@@ -42,6 +42,11 @@ app.get("/api/v1/lcoobject", (req, res) => {
 app.get("/api/v1/courses", (req, res) => {
     res.send(courses);
 });
+app.get("/api/v1/mycourse/:courseId", (req, res) => {
+    const myCourse = courses.find(course => course.id === req.params.courseId )
+    res.send(myCourse);
+});
+
 
 
 
