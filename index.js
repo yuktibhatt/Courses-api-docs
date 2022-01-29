@@ -39,6 +39,10 @@ app.get("/api/v1/lcoobject", (req, res) => {
     res.send({ id: "55", name: "Learn Backend", price: 999});
 });
 
+app.get("/api/v1/courses", (req, res) => {
+    res.send(courses);
+});
+
 
 
 
