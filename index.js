@@ -9,8 +9,33 @@ const swaggerDocument = YAML.load('./swagger.yaml');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+let courses =[
+    {
+        id: "11",
+        name : "Learn React Js",
+        price: 299
+    },
+    {
+        id: "22",
+        name : "Learn Angular Js",
+        price: 499
+    },
+    {
+        id: "33",
+        name : "Learn Django",
+        price: 399
+    },
+];
+
 app.get("/", (req, res) => {
     res.send("Hello there.. ");
-})
+});
+
+app.get("/api/v1/lco", (req, res) => {
+    res.send("Hello from lco docs");
+});
+
+
+
 
 app.listen(4000, () => console.log(`Server is running at port 4000..`));
