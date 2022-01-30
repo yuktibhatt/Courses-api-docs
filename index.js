@@ -12,6 +12,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json());
 app.use(fileUpload());
 
+const PORT = process.env.PORT || 4000;
+
 let courses =[
     {
         id: "11",
@@ -77,5 +79,6 @@ app.post("/api/v1/courseupload", (req,res) => {
 
 
 
-
-app.listen(4000, () => console.log(`Server is running at port 4000..`));
+app.listen(PORT, () => {
+    console.log(`Server is running at ${PORT}`);
+});
